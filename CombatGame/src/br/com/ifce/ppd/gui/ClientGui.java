@@ -32,7 +32,7 @@ public class ClientGui extends JFrame implements ActionListener{
 
     /*ConnectionArea*/
     private JLabel labelConnection;
-    private JButton buttonConnect, buttonStart;
+    private JButton buttonRestart, buttonStart;
 
 
     /*ChatArea*/
@@ -65,14 +65,14 @@ public class ClientGui extends JFrame implements ActionListener{
         this.labelConnection = new JLabel("DISCONNECTED");
         this.labelConnection.setForeground(Color.red);
 
-        this.buttonConnect = new JButton("Connect");
-        this.buttonConnect.setPreferredSize(new Dimension(5, 5));
         this.buttonStart = new JButton("Start");
         this.buttonStart.setPreferredSize(new Dimension(5, 5));
+        this.buttonRestart = new JButton("Restart");
+        this.buttonRestart.setPreferredSize(new Dimension(5, 5));
 
         this.connectionArea.add(labelConnection);
-        this.connectionArea.add(buttonConnect);
         this.connectionArea.add(buttonStart);
+        this.connectionArea.add(buttonRestart);
     }
 
 
