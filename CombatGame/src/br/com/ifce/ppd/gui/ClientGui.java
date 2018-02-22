@@ -2,11 +2,14 @@ package br.com.ifce.ppd.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -17,7 +20,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ClientGui extends JFrame {
+public class ClientGui extends JFrame implements ActionListener{
 
     /**
      *
@@ -82,20 +85,18 @@ public class ClientGui extends JFrame {
         this.textArea = new JTextArea();
         this.textArea.setEditable(false);
         this.scrollText = new JScrollPane(textArea);
-        //messagePanel.add(scrollText, BorderLayout.CENTER);
         this.chatArea.add(scrollText, BorderLayout.CENTER);
 
         JPanel panelText = new JPanel();
         panelText.setLayout(new BorderLayout());
         this.textField = new JTextField();
-        //textField.setFont(f);
         this.textField.setToolTipText("Type your message here");
         this.textField.setPreferredSize(new Dimension(220, 30));
         panelText.add(textField, BorderLayout.WEST);
 
         this.buttonSend = new JButton("Send");
         this.buttonSend.setToolTipText("Click to send your message");
-        //buttonSend.addActionListener(new SenderListener());
+        this.buttonSend.addActionListener(this);
         panelText.add(buttonSend, BorderLayout.EAST);
 
         this.chatArea.add(panelText, BorderLayout.SOUTH);
@@ -139,4 +140,16 @@ public class ClientGui extends JFrame {
         this.eastPanel = new JPanel();
         c.add(eastPanel, BorderLayout.EAST);
     }
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		/* 
+		println(textArea.getText());
+		.flush();
+		textArea.setText("");
+		textArea.requestFocus();
+		
+				
+		*/
+	}
 }
