@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -17,7 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class ClientGui extends JFrame{
+public class ClientGui extends JFrame implements ActionListener{
 
 	/**
 	 * 
@@ -29,7 +31,7 @@ public class ClientGui extends JFrame{
 	
 	/*ConnectionArea*/
 	private JLabel labelConnection;
-	private JButton buttonConnect, buttonStart;
+	private JButton buttonRestart, buttonStart;
 	
 	
 	
@@ -65,14 +67,14 @@ public class ClientGui extends JFrame{
     	this.labelConnection = new JLabel("DISCONNECTED");
     	this.labelConnection.setForeground(Color.red);
     	
-     	this.buttonConnect = new JButton("Connect");
-    	this.buttonConnect.setPreferredSize(new Dimension(5,5));
     	this.buttonStart = new JButton("Start");
     	this.buttonStart.setPreferredSize(new Dimension(5,5));
+     	this.buttonRestart = new JButton("Restart");
+    	this.buttonRestart.setPreferredSize(new Dimension(5,5));
     	
     	this.connectionArea.add(labelConnection);
-    	this.connectionArea.add(buttonConnect);
     	this.connectionArea.add(buttonStart);
+    	this.connectionArea.add(buttonRestart);
     }
     
     
@@ -141,4 +143,16 @@ public class ClientGui extends JFrame{
     	this.eastPanel = new JPanel();
     	c.add(eastPanel, BorderLayout.EAST);
     }
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		/*
+		 *nomeDoSocket.println(textArea.getText());
+		 * nomeDoSocket.flush();
+		 * textArea.setText("");
+		 * textArea.requestFocus();
+		 */
+		
+	}
+    
 }
